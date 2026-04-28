@@ -22,7 +22,7 @@ Descarga `m.min.css`, inclúyelo en tu proyecto y empieza a usar las clases util
 ## Documentación
 
 Sitio oficial y guía de referencia completa en:  
-**[mcss.pages.dev](https://mcss.pages.dev)**
+**[m-css.pages.dev](https://m-css.pages.dev)**
 
 ## Licencia
 
