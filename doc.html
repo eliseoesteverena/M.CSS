@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Documentación — M.CSS Framework</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./m.min.css">
+  <link rel="stylesheet" href="./custom.css">
+</head>
+<body class="bg-gray-50">
+
+  <header class="bg-primary text-white py-8 mb-8">
+    <div class="container">
+      <h1 class="text-4xl font-bold mb-2">M.CSS Framework</h1>
+      <p class="text-lg mb-0" style="color:var(--color-primary-light)">Documentación técnica y guía de uso</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section id="introduccion" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Introducción</h2>
+      <p>M.CSS es un framework CSS minimalista diseñado para cubrir el 80% de casos de uso en desarrollo web con solo 10KB minificado. Se enfoca en proporcionar utilidades esenciales sin sacrificar funcionalidad ni rendimiento.</p>
+      <h3>Características principales</h3>
+      <ul>
+        <li>Peso mínimo: aproximadamente 10KB minificado</li>
+        <li>Sin dependencias externas</li>
+        <li>Variables CSS nativas para fácil personalización</li>
+        <li>Sistema de espaciado consistente basado en múltiplos de 0.25rem</li>
+        <li>Reset CSS moderno incluido</li>
+        <li>Soporte responsive con breakpoints sm y md</li>
+        <li>Accesibilidad integrada desde el diseño</li>
+        <li>Semántica HTML5</li>
+      </ul>
+      <h3>Filosofía</h3>
+      <p class="mb-0">El framework sigue una filosofía de utilidad-primero (utility-first) combinada con estilos base semánticos. Los elementos HTML tienen estilos predeterminados sensatos, mientras que las clases utilitarias permiten personalización granular cuando se necesita.</p>
+    </section>
+
+    <section id="principios" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Principios de diseño aplicados</h2>
+      <h3>1. Espaciado vertical consistente</h3>
+      <p>Todos los elementos de bloque (h1–h6, p, ul, ol) tienen márgenes inferiores predefinidos que establecen un ritmo vertical coherente. Los valores siguen una escala lógica:</p>
+      <ul>
+        <li>Títulos principales (h1, h2): margin-bottom de 1rem (--space-4) y 0.75rem (--space-3)</li>
+        <li>Títulos secundarios (h3–h6): margin-bottom de 0.75rem a 0.5rem</li>
+        <li>Párrafos: margin-bottom de 0.75rem (--space-3)</li>
+        <li>Elementos de lista: margin-bottom de 0.25rem (--space-1)</li>
+      </ul>
+      <h3>2. Jerarquía visual clara</h3>
+      <p>La escala tipográfica está diseñada para establecer una jerarquía visual inmediata:</p>
+      <ul>
+        <li>Títulos grandes (h1–h3): 2.25rem a 1.5rem</li>
+        <li>Títulos pequeños (h4–h6): 1.25rem a 1rem</li>
+        <li>Texto base: 1rem con line-height de 1.6 para óptima legibilidad</li>
+      </ul>
+      <h3>3. Sistema de espaciado modular</h3>
+      <p>El espaciado sigue una escala de 8 puntos base (0.25rem = 4px):</p>
+      <ul>
+        <li>0, 1 (4px), 2 (8px), 3 (12px), 4 (16px), 6 (24px), 8 (32px)</li>
+        <li>Esta escala garantiza alineación consistente en toda la interfaz</li>
+        <li>Los espacios se aplican mediante clases utilitarias (p-*, m-*, gap-*)</li>
+      </ul>
+      <h3>4. Mobile-first responsive</h3>
+      <p>El framework usa un enfoque mobile-first donde los estilos base son para móviles y los breakpoints amplían funcionalidad:</p>
+      <ul>
+        <li>Base: 0–639px (móvil)</li>
+        <li>sm: 640px+ (tablet)</li>
+        <li>md: 768px+ (desktop)</li>
+      </ul>
+      <h3>5. Accesibilidad como fundamento</h3>
+      <p class="mb-0">Todos los elementos interactivos incluyen estados de foco visibles, los formularios están correctamente etiquetados, y se proporcionan utilidades para contenido exclusivo de lectores de pantalla (.sr-only).</p>
+    </section>
+
+    <section id="instalacion" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Instalación</h2>
+      <h3>Uso básico</h3>
+      <p>Incluye el archivo CSS en el head de tu HTML:</p>
+      <div class="code-block">&lt;link rel="stylesheet" href="m.css"&gt;</div>
+      <!-- CDN próximamente 
+      <h3>Desde CDN</h3>
+      <div class="code-block">&lt;link rel="stylesheet" href="https://tu-cdn.com/m.min.css"&gt;</div>
+      -->
+      <h3>Estructura HTML recomendada</h3>
+      <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width,initial-scale=1.0"&gt;
+  &lt;link rel="stylesheet" href="m.css"&gt;
+  &lt;title&gt;Mi Proyecto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="container"&gt;
+    &lt;!-- Tu contenido aquí --&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+    </section>
+
+    <section id="variables" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Variables CSS</h2>
+      <p>M.CSS utiliza variables CSS nativas que puedes personalizar según tus necesidades.</p>
+      <h3>Colores</h3>
+      <table class="docs-table">
+        <thead><tr><th>Variable</th><th>Valor por defecto</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>--color-primary</td><td>rgb(6, 78, 59)</td><td>Color primario del tema</td></tr>
+          <tr><td>--color-primary-light</td><td>rgb(209, 250, 229)</td><td>Variante clara del primario</td></tr>
+          <tr><td>--color-primary-dark</td><td>rgb(2, 44, 34)</td><td>Variante oscura del primario</td></tr>
+          <tr><td>--color-gray-50 a 900</td><td>Escala de grises</td><td>Colores neutrales</td></tr>
+          <tr><td>--color-white</td><td>#ffffff</td><td>Blanco puro</td></tr>
+        </tbody>
+      </table>
+      <h3>Espaciado</h3>
+      <table class="docs-table">
+        <thead><tr><th>Variable</th><th>Valor</th><th>Píxeles</th></tr></thead>
+        <tbody>
+          <tr><td>--space-0</td><td>0</td><td>0px</td></tr>
+          <tr><td>--space-1</td><td>0.25rem</td><td>4px</td></tr>
+          <tr><td>--space-2</td><td>0.5rem</td><td>8px</td></tr>
+          <tr><td>--space-3</td><td>0.75rem</td><td>12px</td></tr>
+          <tr><td>--space-4</td><td>1rem</td><td>16px</td></tr>
+          <tr><td>--space-6</td><td>1.5rem</td><td>24px</td></tr>
+          <tr><td>--space-8</td><td>2rem</td><td>32px</td></tr>
+        </tbody>
+      </table>
+      <h3>Personalización</h3>
+      <p>Para personalizar las variables, sobrescríbelas en tu propio CSS:</p>
+      <div class="code-block">:root {
+  --color-primary: #007bff;
+  --color-primary-light: #cce5ff;
+  --color-primary-dark: #004085;
+}</div>
+    </section>
+
+    <section id="tipografia" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Tipografía</h2>
+      <h3>Tamaños de texto</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Tamaño</th><th>Uso recomendado</th></tr></thead>
+        <tbody>
+          <tr><td>.text-xs</td><td>0.75rem (12px)</td><td>Metadatos, notas al pie</td></tr>
+          <tr><td>.text-sm</td><td>0.875rem (14px)</td><td>Texto secundario, labels</td></tr>
+          <tr><td>.text-base</td><td>1rem (16px)</td><td>Texto principal</td></tr>
+          <tr><td>.text-lg</td><td>1.125rem (18px)</td><td>Texto destacado</td></tr>
+          <tr><td>.text-xl</td><td>1.25rem (20px)</td><td>Subtítulos</td></tr>
+          <tr><td>.text-2xl</td><td>1.5rem (24px)</td><td>Títulos secundarios</td></tr>
+          <tr><td>.text-3xl</td><td>1.875rem (30px)</td><td>Títulos principales</td></tr>
+          <tr><td>.text-4xl</td><td>2.25rem (36px)</td><td>Heroes, encabezados grandes</td></tr>
+        </tbody>
+      </table>
+      <h3>Pesos de fuente</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Peso</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>.font-normal</td><td>400</td><td>Texto regular</td></tr>
+          <tr><td>.font-medium</td><td>500</td><td>Énfasis medio</td></tr>
+          <tr><td>.font-semibold</td><td>600</td><td>Subtítulos, énfasis fuerte</td></tr>
+          <tr><td>.font-bold</td><td>700</td><td>Títulos, elementos destacados</td></tr>
+        </tbody>
+      </table>
+      <h3>Alineación de texto</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="border p-3 rounded-md"><span class="inline-code">.text-left</span><p class="text-left text-sm mb-0 mt-2">Alineado a la izquierda</p></div>
+        <div class="border p-3 rounded-md"><span class="inline-code">.text-center</span><p class="text-center text-sm mb-0 mt-2">Centrado</p></div>
+        <div class="border p-3 rounded-md"><span class="inline-code">.text-right</span><p class="text-right text-sm mb-0 mt-2">Alineado a la derecha</p></div>
+      </div>
+      <h3>Ejemplo de uso</h3>
+      <div class="code-block">&lt;h1 class="text-4xl font-bold text-primary"&gt;Título Principal&lt;/h1&gt;
+&lt;p class="text-lg text-gray-700"&gt;Párrafo destacado&lt;/p&gt;
+&lt;small class="text-sm text-gray-500"&gt;Texto pequeño&lt;/small&gt;</div>
+    </section>
+
+    <section id="colores" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Sistema de colores</h2>
+      <h3>Colores de texto</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td>.text-primary</td><td>Color primario del tema</td></tr>
+          <tr><td>.text-gray-500</td><td>Gris medio para texto secundario</td></tr>
+          <tr><td>.text-gray-700</td><td>Gris oscuro para labels</td></tr>
+          <tr><td>.text-gray-900</td><td>Casi negro para texto principal</td></tr>
+          <tr><td>.text-white</td><td>Blanco para texto sobre fondos oscuros</td></tr>
+        </tbody>
+      </table>
+      <h3>Colores de fondo</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td>.bg-primary</td><td>Fondo con color primario</td></tr>
+          <tr><td>.bg-primary-light</td><td>Fondo con variante clara del primario</td></tr>
+          <tr><td>.bg-gray-50</td><td>Fondo gris muy claro</td></tr>
+          <tr><td>.bg-gray-100</td><td>Fondo gris claro para secciones</td></tr>
+          <tr><td>.bg-white</td><td>Fondo blanco</td></tr>
+        </tbody>
+      </table>
+      <h3>Ejemplos visuales</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-4">
+        <div class="bg-primary text-white p-3 rounded-md text-center text-sm">.bg-primary</div>
+        <div class="bg-primary-light text-primary p-3 rounded-md text-center text-sm border">.bg-primary-light</div>
+        <div class="bg-gray-100 p-3 rounded-md text-center text-sm">.bg-gray-100</div>
+        <div class="bg-white border p-3 rounded-md text-center text-sm">.bg-white</div>
+        <div class="bg-gray-50 border p-3 rounded-md text-center text-sm">.bg-gray-50</div>
+      </div>
+    </section>
+
+    <section id="espaciado" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Sistema de espaciado</h2>
+      <p>El espaciado utiliza una escala consistente basada en múltiplos de 0.25rem (4px). Este sistema garantiza alineación precisa y coherencia visual.</p>
+      <h3>Padding</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Descripción</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>.p-0 a .p-8</td><td>Padding en todos los lados</td><td>0 a 2rem</td></tr>
+          <tr><td>.px-1 a .px-6</td><td>Padding horizontal</td><td>0.25rem a 1.5rem</td></tr>
+          <tr><td>.py-1 a .py-8</td><td>Padding vertical</td><td>0.25rem a 2rem</td></tr>
+        </tbody>
+      </table>
+      <h3>Margin</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Descripción</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>.m-0 a .m-4</td><td>Margin en todos los lados</td><td>0 a 1rem</td></tr>
+          <tr><td>.mx-auto</td><td>Margin horizontal automático (centrar)</td><td>auto</td></tr>
+          <tr><td>.my-2 a .my-6</td><td>Margin vertical</td><td>0.5rem a 1.5rem</td></tr>
+          <tr><td>.mt-2 a .mt-6</td><td>Margin superior</td><td>0.5rem a 1.5rem</td></tr>
+          <tr><td>.mb-0 a .mb-6</td><td>Margin inferior</td><td>0 a 1.5rem</td></tr>
+        </tbody>
+      </table>
+      <h3>Gap (espaciado en Grid y Flex)</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>.gap-1</td><td>0.25rem</td><td>Espaciado mínimo</td></tr>
+          <tr><td>.gap-2</td><td>0.5rem</td><td>Espaciado pequeño</td></tr>
+          <tr><td>.gap-3</td><td>0.75rem</td><td>Espaciado medio</td></tr>
+          <tr><td>.gap-4</td><td>1rem</td><td>Espaciado estándar</td></tr>
+          <tr><td>.gap-6</td><td>1.5rem</td><td>Espaciado amplio</td></tr>
+        </tbody>
+      </table>
+      <h3>Principios de uso</h3>
+      <ul>
+        <li>Usa padding para espacio interno de componentes</li>
+        <li>Usa margin para separación entre componentes</li>
+        <li>Usa gap para espaciado entre items en Grid y Flexbox</li>
+        <li>Prefiere .mb-0 en el último elemento de un contenedor para evitar espacio extra</li>
+      </ul>
+      <h3>Ejemplo práctico</h3>
+      <div class="code-block">&lt;section class="bg-white p-6 rounded-lg mb-6"&gt;
+  &lt;h2 class="mb-4"&gt;Título de sección&lt;/h2&gt;
+  &lt;p class="mb-3"&gt;Párrafo con espaciado&lt;/p&gt;
+  &lt;p class="mb-0"&gt;Último párrafo sin margen&lt;/p&gt;
+&lt;/section&gt;</div>
+    </section>
+
+    <section id="layout" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Sistema de Layout</h2>
+      <h3>Flexbox</h3>
+      <p>Flexbox es ideal para layouts unidimensionales (filas o columnas).</p>
+      <h4>Dirección</h4>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Descripción</th></tr></thead>
+        <tbody>
+          <tr><td>.flex</td><td>Activa display flex</td></tr>
+          <tr><td>.flex-row</td><td>Dirección horizontal (default)</td></tr>
+          <tr><td>.flex-col</td><td>Dirección vertical</td></tr>
+          <tr><td>.flex-wrap</td><td>Permite salto de línea</td></tr>
+        </tbody>
+      </table>
+      <h4>Justify Content</h4>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Efecto</th></tr></thead>
+        <tbody>
+          <tr><td>.justify-start</td><td>Alinea al inicio</td></tr>
+          <tr><td>.justify-center</td><td>Centra elementos</td></tr>
+          <tr><td>.justify-between</td><td>Espacio entre elementos</td></tr>
+        </tbody>
+      </table>
+      <h4>Align Items</h4>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Efecto</th></tr></thead>
+        <tbody>
+          <tr><td>.items-start</td><td>Alinea al inicio</td></tr>
+          <tr><td>.items-center</td><td>Centra verticalmente</td></tr>
+          <tr><td>.items-stretch</td><td>Estira elementos</td></tr>
+        </tbody>
+      </table>
+      <h4>Ejemplo Flexbox</h4>
+      <div class="code-block">&lt;div class="flex justify-between items-center gap-4"&gt;
+  &lt;span&gt;Elemento 1&lt;/span&gt;
+  &lt;span&gt;Elemento 2&lt;/span&gt;
+&lt;/div&gt;</div>
+      <h3>Grid</h3>
+      <p>Grid es perfecto para layouts bidimensionales complejos.</p>
+      <h4>Columnas</h4>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Columnas</th><th>Responsive</th></tr></thead>
+        <tbody>
+          <tr><td>.grid-cols-1</td><td>1 columna</td><td>Base (móvil)</td></tr>
+          <tr><td>.grid-cols-2</td><td>2 columnas</td><td>Base</td></tr>
+          <tr><td>.grid-cols-3</td><td>3 columnas</td><td>Base</td></tr>
+          <tr><td>.grid-cols-4</td><td>4 columnas</td><td>Base</td></tr>
+          <tr><td>.sm:grid-cols-2</td><td>2 columnas</td><td>640px+</td></tr>
+          <tr><td>.md:grid-cols-3</td><td>3 columnas</td><td>768px+</td></tr>
+        </tbody>
+      </table>
+      <h4>Ejemplo Grid responsive</h4>
+      <div class="code-block">&lt;div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"&gt;
+  &lt;div&gt;Tarjeta 1&lt;/div&gt;
+  &lt;div&gt;Tarjeta 2&lt;/div&gt;
+  &lt;div&gt;Tarjeta 3&lt;/div&gt;
+&lt;/div&gt;</div>
+      <h3>Container</h3>
+      <p>La clase .container centra el contenido y limita el ancho máximo:</p>
+      <table class="docs-table">
+        <thead><tr><th>Propiedad</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>max-width</td><td>1200px</td></tr>
+          <tr><td>margin</td><td>0 auto (centrado)</td></tr>
+          <tr><td>padding</td><td>0 1rem (lateral)</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">&lt;div class="container"&gt;
+  &lt;!-- Contenido centrado y limitado --&gt;
+&lt;/div&gt;</div>
+    </section>
+
+    <section id="dimensiones" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Dimensiones</h2>
+      <h3>Anchos</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>.w-auto</td><td>auto</td><td>Ancho automático</td></tr>
+          <tr><td>.w-full</td><td>100%</td><td>Ancho completo</td></tr>
+          <tr><td>.w-1-2</td><td>50%</td><td>Mitad del contenedor</td></tr>
+          <tr><td>.w-1-3</td><td>33.33%</td><td>Un tercio</td></tr>
+          <tr><td>.w-2-3</td><td>66.67%</td><td>Dos tercios</td></tr>
+          <tr><td>.w-1-4</td><td>25%</td><td>Un cuarto</td></tr>
+          <tr><td>.w-3-4</td><td>75%</td><td>Tres cuartos</td></tr>
+        </tbody>
+      </table>
+      <h3>Alturas</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor</th></tr></thead>
+        <tbody>
+          <tr><td>.h-auto</td><td>auto</td></tr>
+          <tr><td>.h-full</td><td>100%</td></tr>
+        </tbody>
+      </table>
+      <h3>Anchos máximos</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor</th><th>Uso recomendado</th></tr></thead>
+        <tbody>
+          <tr><td>.max-w-md</td><td>28rem (448px)</td><td>Formularios pequeños</td></tr>
+          <tr><td>.max-w-lg</td><td>32rem (512px)</td><td>Contenido medio</td></tr>
+          <tr><td>.max-w-xl</td><td>36rem (576px)</td><td>Artículos</td></tr>
+          <tr><td>.max-w-2xl</td><td>42rem (672px)</td><td>Contenido extenso</td></tr>
+          <tr><td>.max-w-4xl</td><td>56rem (896px)</td><td>Secciones amplias</td></tr>
+          <tr><td>.max-w-full</td><td>100%</td><td>Sin restricción</td></tr>
+        </tbody>
+      </table>
+      <h3>Ejemplo de uso</h3>
+      <div class="code-block">&lt;div class="container"&gt;
+  &lt;article class="max-w-2xl mx-auto"&gt;
+    &lt;!-- Artículo centrado con ancho máximo --&gt;
+  &lt;/article&gt;
+&lt;/div&gt;</div>
+    </section>
+
+    <section id="bordes" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Bordes y esquinas</h2>
+      <h3>Bordes</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Efecto</th></tr></thead>
+        <tbody>
+          <tr><td>.border</td><td>Borde de 1px en todos los lados</td></tr>
+          <tr><td>.border-0</td><td>Sin borde</td></tr>
+        </tbody>
+      </table>
+      <h3>Border Radius</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>.rounded-sm</td><td>0.125rem (2px)</td><td>Esquinas sutiles</td></tr>
+          <tr><td>.rounded-md</td><td>0.375rem (6px)</td><td>Estándar</td></tr>
+          <tr><td>.rounded-lg</td><td>0.5rem (8px)</td><td>Esquinas pronunciadas</td></tr>
+        </tbody>
+      </table>
+      <h3>Ejemplos visuales</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <div class="border rounded-sm p-4 bg-gray-50 text-center">.rounded-sm</div>
+        <div class="border rounded-md p-4 bg-gray-50 text-center">.rounded-md</div>
+        <div class="border rounded-lg p-4 bg-gray-50 text-center">.rounded-lg</div>
+      </div>
+    </section>
+
+    <section id="display" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Display y visibilidad</h2>
+      <h3>Display</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor CSS</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>.block</td><td>display: block</td><td>Elemento de bloque</td></tr>
+          <tr><td>.inline</td><td>display: inline</td><td>Elemento en línea</td></tr>
+          <tr><td>.inline-block</td><td>display: inline-block</td><td>Híbrido</td></tr>
+          <tr><td>.hidden</td><td>display: none</td><td>Oculta elemento</td></tr>
+        </tbody>
+      </table>
+      <h3>Overflow</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Efecto</th></tr></thead>
+        <tbody>
+          <tr><td>.overflow-hidden</td><td>Oculta contenido que sobresale</td></tr>
+          <tr><td>.overflow-auto</td><td>Muestra scrollbars si es necesario</td></tr>
+        </tbody>
+      </table>
+      <h3>Position</h3>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Valor CSS</th></tr></thead>
+        <tbody>
+          <tr><td>.relative</td><td>position: relative</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="accesibilidad" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Accesibilidad</h2>
+      <p>La accesibilidad está integrada en todos los elementos del framework. Aquí las utilidades específicas:</p>
+      <h3>Screen Reader Only</h3>
+      <p>La clase .sr-only oculta elementos visualmente pero los mantiene accesibles para lectores de pantalla:</p>
+      <table class="docs-table">
+        <thead><tr><th>Clase</th><th>Uso</th></tr></thead>
+        <tbody>
+          <tr><td>.sr-only</td><td>Oculta visualmente, accesible para lectores</td></tr>
+          <tr><td>.not-sr-only</td><td>Revierte .sr-only</td></tr>
+        </tbody>
+      </table>
+      <div class="code-block">&lt;button&gt;
+  &lt;span class="sr-only"&gt;Cerrar menú&lt;/span&gt;
+  &lt;span aria-hidden="true"&gt;&times;&lt;/span&gt;
+&lt;/button&gt;</div>
+      <h3>Focus visible</h3>
+      <p>Todos los elementos interactivos tienen indicadores de foco automáticos:</p>
+      <ul>
+        <li>Outline de 2px en color primario</li>
+        <li>Offset de 2px para mejor visibilidad</li>
+        <li>Aplica a botones, enlaces, inputs y elementos con tabindex</li>
+      </ul>
+      <h3>Formularios accesibles</h3>
+      <p>Los formularios incluyen estructura semántica automática:</p>
+      <ul>
+        <li>Labels asociados via atributo for</li>
+        <li>Fieldsets con legend para grupos de controles</li>
+        <li>Estados de foco visibles en todos los inputs</li>
+        <li>Contraste de color suficiente (WCAG AA)</li>
+      </ul>
+      <div class="code-block">&lt;fieldset&gt;
+  &lt;legend&gt;Preferencias&lt;/legend&gt;
+  &lt;div&gt;
+    &lt;input type="radio" id="opt1" name="pref"&gt;
+    &lt;label for="opt1"&gt;Opción 1&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;</div>
+      <h3>Mejores prácticas</h3>
+      <ul>
+        <li>Usa elementos semánticos (nav, main, article, section)</li>
+        <li>Siempre incluye atributos alt en imágenes</li>
+        <li>Usa aria-labels cuando el contexto visual no es suficiente</li>
+        <li>Mantén un orden lógico de tabulación</li>
+        <li>Prueba la navegación con teclado (Tab, Shift+Tab, Enter)</li>
+      </ul>
+    </section>
+
+    <section id="responsive" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Diseño Responsive</h2>
+      <p>M.CSS usa un enfoque mobile-first con dos breakpoints principales:</p>
+      <h3>Breakpoints</h3>
+      <table class="docs-table">
+        <thead><tr><th>Prefijo</th><th>Ancho mínimo</th><th>Dispositivo</th></tr></thead>
+        <tbody>
+          <tr><td>(ninguno)</td><td>0px</td><td>Móvil (base)</td></tr>
+          <tr><td>sm:</td><td>640px</td><td>Tablet</td></tr>
+          <tr><td>md:</td><td>768px</td><td>Desktop</td></tr>
+        </tbody>
+      </table>
+      <h3>Clases responsive disponibles</h3>
+      <h4>Grid</h4>
+      <ul>
+        <li>.sm:grid-cols-2, .sm:grid-cols-3</li>
+        <li>.md:grid-cols-2, .md:grid-cols-3, .md:grid-cols-4</li>
+      </ul>
+      <h4>Flexbox</h4>
+      <ul>
+        <li>.sm:flex-row, .md:flex-row</li>
+      </ul>
+      <h4>Texto</h4>
+      <ul>
+        <li>.sm:text-left</li>
+      </ul>
+      <h3>Patrón mobile-first</h3>
+      <div class="code-block">&lt;!-- 1 columna en móvil, 2 en tablet, 3 en desktop --&gt;
+&lt;div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+  &lt;div&gt;Item&lt;/div&gt;
+&lt;/div&gt;</div>
+      <h3>Estrategia de diseño</h3>
+      <ol>
+        <li>Diseña primero para móvil (320–639px)</li>
+        <li>Usa clases base sin prefijo para estilos móviles</li>
+        <li>Agrega clases sm: para mejorar en tablet</li>
+        <li>Agrega clases md: para optimizar en desktop</li>
+        <li>Prueba en múltiples tamaños de pantalla</li>
+      </ol>
+    </section>
+
+    <section id="buenas-practicas" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Buenas prácticas</h2>
+      <h3>1. Estructura semántica</h3>
+      <p>Usa elementos HTML5 semánticos siempre que sea posible:</p>
+      <div class="code-block">&lt;header&gt;&lt;/header&gt;
+&lt;nav&gt;&lt;/nav&gt;
+&lt;main&gt;
+  &lt;article&gt;&lt;/article&gt;
+  &lt;section&gt;&lt;/section&gt;
+  &lt;aside&gt;&lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt;&lt;/footer&gt;</div>
+      <h3>2. Consistencia en espaciado</h3>
+      <ul>
+        <li>Usa .mb-0 en el último elemento de contenedores para evitar espacio extra</li>
+        <li>Mantén espaciado consistente: gap-4 para grids, p-6 para tarjetas</li>
+        <li>Usa my-6 o my-8 para separar secciones principales</li>
+      </ul>
+      <h3>3. Jerarquía visual</h3>
+      <ul>
+        <li>Usa h1 solo una vez por página</li>
+        <li>Respeta el orden jerárquico: h1 &gt; h2 &gt; h3</li>
+        <li>Combina tamaños con pesos: text-4xl + font-bold para títulos</li>
+      </ul>
+      <h3>4. Componentes reutilizables</h3>
+      <p>Crea patrones consistentes para elementos comunes:</p>
+      <div class="code-block">&lt;!-- Tarjeta estándar --&gt;
+&lt;article class="bg-white border rounded-lg p-6 mb-6"&gt;
+  &lt;h3&gt;Título&lt;/h3&gt;
+  &lt;p class="mb-4"&gt;Contenido&lt;/p&gt;
+  &lt;button class="w-full"&gt;Acción&lt;/button&gt;
+&lt;/article&gt;</div>
+      <h3>5. Responsive por defecto</h3>
+      <ul>
+        <li>Piensa mobile-first en cada componente</li>
+        <li>Usa grid responsive para layouts adaptativos</li>
+        <li>Prueba en múltiples tamaños antes de publicar</li>
+      </ul>
+      <h3>6. Accesibilidad siempre</h3>
+      <ul>
+        <li>Todos los inputs deben tener labels asociados</li>
+        <li>Usa atributos ARIA cuando sea necesario</li>
+        <li>Mantén contraste de color adecuado</li>
+        <li>Prueba navegación con teclado</li>
+      </ul>
+      <h3>7. Optimización de rendimiento</h3>
+      <ul>
+        <li>Minimiza el uso de clases innecesarias</li>
+        <li>Aprovecha los estilos base de elementos HTML</li>
+        <li>Usa .container para limitar anchos y mejorar legibilidad</li>
+      </ul>
+      <h3>Ejemplo completo</h3>
+      <div class="code-block">&lt;main class="container my-8"&gt;
+  &lt;section class="bg-white p-6 rounded-lg mb-6"&gt;
+    &lt;h2 class="text-primary mb-4"&gt;Título de sección&lt;/h2&gt;
+    &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4"&gt;
+      &lt;div&gt;
+        &lt;label for="nombre"&gt;Nombre&lt;/label&gt;
+        &lt;input type="text" id="nombre"&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;label for="email"&gt;Email&lt;/label&gt;
+        &lt;input type="email" id="email"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="mt-4"&gt;Enviar&lt;/button&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</div>
+    </section>
+
+    <section class="bg-primary-light border border-primary p-6 rounded-lg mb-8">
+      <h2 class="text-primary">Resumen</h2>
+      <p class="mb-4">M.CSS es un framework minimalista pero completo que proporciona todas las herramientas esenciales para construir interfaces web modernas y accesibles.</p>
+      <h3 class="text-primary">Ventajas principales</h3>
+      <ul class="mb-4">
+        <li>Peso mínimo de 10KB sin comprometer funcionalidad</li>
+        <li>Sistema de espaciado consistente y escalable</li>
+        <li>Responsive mobile-first con breakpoints prácticos</li>
+        <li>Accesibilidad integrada en todos los componentes</li>
+        <li>Fácil personalización via variables CSS</li>
+        <li>Sin dependencias externas</li>
+      </ul>
+      <p class="mb-0">Para empezar, incluye el archivo CSS en tu proyecto y comienza a usar las clases utilitarias. M.CSS está diseñado para ser intuitivo y fácil de aprender, permitiéndote construir interfaces rápido sin sacrificar calidad.</p>
+    </section>
+
+  </main>
+
+  <footer class="bg-primary text-white py-6">
+    <div class="container text-center">
+      <p class="text-sm mb-2">M.CSS Framework — Documentación v1.0</p>
+      <p class="text-xs mb-0" style="color:var(--color-primary-light)">Construido con CSS moderno, pensado para desarrolladores</p>
+    </div>
+  </footer>
+
+  <script src="./nav.js"></script>
+</body>
+</html>

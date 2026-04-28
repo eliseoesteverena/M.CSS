@@ -1,0 +1,145 @@
+/* custom.css — M.CSS site styles */
+
+/* --- Sidebar / Nav --- */
+#site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: var(--color-white);
+  border-right: 1px solid var(--color-gray-200);
+  overflow-y: auto;
+  z-index: 100;
+  transition: transform .25s ease;
+}
+#site-nav .nav-logo {
+  display: block;
+  padding: var(--space-4) var(--space-4) var(--space-3);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-gray-200);
+  text-decoration: none;
+}
+#site-nav .nav-section-title {
+  padding: var(--space-3) var(--space-4) var(--space-1);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--color-gray-500);
+}
+#site-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4);
+}
+#site-nav ul li { margin: 0; }
+#site-nav ul li a {
+  display: block;
+  padding: var(--space-1) var(--space-4) var(--space-1) var(--space-6);
+  font-size: var(--font-sm);
+  color: var(--color-gray-700);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color .15s, border-color .15s, background .15s;
+}
+#site-nav ul li a:hover,
+#site-nav ul li a.active {
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  background: var(--color-gray-50);
+  text-decoration: none;
+}
+#nav-toggle {
+  display: none;
+  position: fixed;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 200;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  font-size: var(--font-base);
+  line-height: 1;
+}
+#nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 99;
+}
+
+/* Layout shift to account for fixed sidebar */
+body.has-sidenav { padding-left: 260px; }
+
+@media (max-width: 767px) {
+  body.has-sidenav { padding-left: 0; }
+  #site-nav { transform: translateX(-100%); }
+  #site-nav.open { transform: translateX(0); }
+  #nav-toggle { display: block; }
+  #nav-overlay.open { display: block; }
+}
+
+/* --- Code blocks --- */
+.code-block {
+  background: var(--color-gray-900);
+  color: var(--color-gray-100);
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-sm);
+  line-height: 1.6;
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin-bottom: var(--space-4);
+  white-space: pre-wrap;
+}
+
+/* --- Inline code label --- */
+.inline-code {
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-gray-100);
+  border-radius: var(--radius-sm);
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-sm);
+  color: var(--color-primary-dark);
+}
+
+/* --- Docs table (overrides default table only in doc context) --- */
+.docs-table { font-size: var(--font-sm); }
+.docs-table td:first-child {
+  font-family: 'Courier New', monospace;
+  color: var(--color-primary-dark);
+}
+
+/* --- Code toggle (index.html snippets) --- */
+.snippet-toggle { display: none; }
+.snippet-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-size: var(--font-sm);
+  color: var(--color-gray-500);
+  margin-bottom: var(--space-3);
+  user-select: none;
+}
+.snippet-label::before {
+  content: '</>';
+  font-family: 'Courier New', monospace;
+  font-size: var(--font-xs);
+  padding: 2px var(--space-2);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  background: var(--color-gray-50);
+  color: var(--color-primary);
+}
+.snippet-toggle:checked + .snippet-label { color: var(--color-primary); }
+.snippet-toggle:checked + .snippet-label::before { background: var(--color-primary-light); border-color: var(--color-primary); }
+.snippet-code { display: none; }
+.snippet-toggle:checked ~ .snippet-code { display: block; }

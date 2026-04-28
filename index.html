@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>M.CSS — Framework CSS Minimalista</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./m.min.css">
+  <link rel="stylesheet" href="./custom.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Hero -->
+  <header class="bg-primary text-white py-8">
+    <div class="container max-w-4xl text-center">
+      <h1 class="text-4xl font-bold mb-3">M.CSS</h1>
+      <p class="text-lg mb-6" style="color:var(--color-primary-light)">Framework CSS minimalista. Todo lo esencial en solo 10KB.</p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href="doc.html"><button type="button">Documentación</button></a>
+        <a href="./m-2.min.css" download="m.css"><button type="button" class="bg-white text-primary border">Descargar M.CSS</button></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container my-8">
+
+    <!-- Tipografía -->
+    <section id="typography" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Tipografía</h2>
+
+      <h3>Jerarquía de títulos</h3>
+      <input type="checkbox" id="sn-typography-headings" class="snippet-toggle">
+      <label for="sn-typography-headings" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;h1&gt;Encabezado nivel 1&lt;/h1&gt;
+&lt;h2&gt;Encabezado nivel 2&lt;/h2&gt;
+&lt;h3&gt;Encabezado nivel 3&lt;/h3&gt;
+&lt;h4&gt;Encabezado nivel 4&lt;/h4&gt;
+&lt;h5&gt;Encabezado nivel 5&lt;/h5&gt;
+&lt;h6&gt;Encabezado nivel 6&lt;/h6&gt;</div></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div>
+          <h4 class="mb-2">Encabezado nivel 4</h4>
+          <h5 class="mb-2">Encabezado nivel 5</h5>
+          <h6 class="mb-3">Encabezado nivel 6</h6>
+          <p>Párrafo con <a href="#typography">enlace interactivo</a> y estilos de texto.</p>
+          <p class="text-sm text-gray-500 mb-0">Texto pequeño en color gris para metadatos</p>
+        </div>
+        <div>
+          <p class="text-xs mb-2">Extra pequeño (xs): 0.75rem</p>
+          <p class="text-sm mb-2">Pequeño (sm): 0.875rem</p>
+          <p class="text-base mb-2">Base: 1rem</p>
+          <p class="text-lg mb-2">Grande (lg): 1.125rem</p>
+          <p class="text-xl mb-2">Extra grande (xl): 1.25rem</p>
+          <p class="text-2xl mb-0">2XL: 1.5rem</p>
+        </div>
+      </div>
+
+      <h3>Pesos de fuente</h3>
+      <input type="checkbox" id="sn-font-weights" class="snippet-toggle">
+      <label for="sn-font-weights" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;span class="font-normal"&gt;Normal (400)&lt;/span&gt;
+&lt;span class="font-medium"&gt;Medium (500)&lt;/span&gt;
+&lt;span class="font-semibold"&gt;Semibold (600)&lt;/span&gt;
+&lt;span class="font-bold"&gt;Bold (700)&lt;/span&gt;</div></div>
+      <div class="flex flex-wrap gap-4">
+        <span class="font-normal">Normal (400)</span>
+        <span class="font-medium">Medium (500)</span>
+        <span class="font-semibold">Semibold (600)</span>
+        <span class="font-bold">Bold (700)</span>
+      </div>
+    </section>
+
+    <!-- Formularios -->
+    <section id="forms" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Formularios</h2>
+
+      <input type="checkbox" id="sn-forms" class="snippet-toggle">
+      <label for="sn-forms" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4"&gt;
+  &lt;div&gt;
+    &lt;label for="name"&gt;Nombre completo&lt;/label&gt;
+    &lt;input type="text" id="name" placeholder="Juan Pérez"&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for="email"&gt;Correo electrónico&lt;/label&gt;
+    &lt;input type="email" id="email" placeholder="correo@ejemplo.com"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;fieldset&gt;
+  &lt;legend&gt;Preferencias de contacto&lt;/legend&gt;
+  &lt;div&gt;&lt;input type="radio" id="r1" name="m"&gt;&lt;label for="r1"&gt;Email&lt;/label&gt;&lt;/div&gt;
+  &lt;div&gt;&lt;input type="radio" id="r2" name="m"&gt;&lt;label for="r2"&gt;Teléfono&lt;/label&gt;&lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;</div></div>
+
+      <form>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div><label for="name">Nombre completo</label><input type="text" id="name" name="name" placeholder="Juan Pérez"></div>
+          <div><label for="email">Correo electrónico</label><input type="email" id="email" name="email" placeholder="correo@ejemplo.com"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+          <div>
+            <label for="country">País</label>
+            <select id="country" name="country">
+              <option value="">Selecciona un país</option>
+              <option value="mx">México</option>
+              <option value="es">España</option>
+              <option value="ar">Argentina</option>
+              <option value="co">Colombia</option>
+            </select>
+          </div>
+          <div><label for="phone">Teléfono</label><input type="tel" id="phone" name="phone" placeholder="+52 555 1234 5678"></div>
+        </div>
+        <div class="mb-4"><label for="message">Mensaje</label><textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea></div>
+        <fieldset class="mb-4">
+          <legend>Preferencias de contacto</legend>
+          <div class="flex flex-col gap-2">
+            <div><input type="radio" id="contact-email" name="contact-method" value="email"><label for="contact-email">Correo electrónico</label></div>
+            <div><input type="radio" id="contact-phone" name="contact-method" value="phone"><label for="contact-phone">Teléfono</label></div>
+            <div><input type="radio" id="contact-any" name="contact-method" value="any" checked><label for="contact-any">Cualquier método</label></div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Suscripciones</legend>
+          <div class="flex flex-col gap-2">
+            <div><input type="checkbox" id="newsletter" name="newsletter"><label for="newsletter">Boletín informativo</label></div>
+            <div><input type="checkbox" id="updates" name="updates"><label for="updates">Actualizaciones de producto</label></div>
+            <div><input type="checkbox" id="promotions" name="promotions"><label for="promotions">Ofertas y promociones</label></div>
+          </div>
+        </fieldset>
+        <div class="flex flex-wrap gap-3 mt-6">
+          <button type="submit">Enviar formulario</button>
+          <button type="reset" class="bg-gray-100 text-gray-900">Limpiar</button>
+          <button type="button" disabled>Deshabilitado</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Layouts -->
+    <section id="layouts" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Layouts</h2>
+
+      <h3>Flexbox — justify-between</h3>
+      <input type="checkbox" id="sn-flex-between" class="snippet-toggle">
+      <label for="sn-flex-between" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;div class="flex justify-between items-center bg-gray-50 p-4 rounded-md border"&gt;
+  &lt;span class="font-semibold"&gt;Título principal&lt;/span&gt;
+  &lt;small&gt;Metadata&lt;/small&gt;
+&lt;/div&gt;</div></div>
+      <div class="flex justify-between items-center bg-gray-50 p-4 rounded-md border mb-6">
+        <span class="font-semibold">Título principal</span><small>Metadata</small>
+      </div>
+
+      <h3>Flexbox — centrado</h3>
+      <input type="checkbox" id="sn-flex-center" class="snippet-toggle">
+      <label for="sn-flex-center" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;div class="flex justify-center items-center bg-gray-50 p-6 rounded-md border"&gt;
+  &lt;button type="button"&gt;Botón centrado&lt;/button&gt;
+&lt;/div&gt;</div></div>
+      <div class="flex justify-center items-center bg-gray-50 p-6 rounded-md border mb-6">
+        <button type="button">Botón centrado</button>
+      </div>
+
+      <h3>Grid responsivo — 3 columnas</h3>
+      <input type="checkbox" id="sn-grid-3" class="snippet-toggle">
+      <label for="sn-grid-3" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"&gt;
+  &lt;div class="bg-primary-light p-4 rounded-md text-center border border-primary"&gt;
+    &lt;h5 class="text-primary mb-2"&gt;Columna 1&lt;/h5&gt;
+    &lt;p class="text-sm mb-0"&gt;Contenido adaptable&lt;/p&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;</div></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+        <div class="bg-primary-light p-4 rounded-md text-center border border-primary">
+          <h5 class="text-primary mb-2">Columna 1</h5><p class="text-sm mb-0">Contenido adaptable</p>
+        </div>
+        <div class="bg-primary-light p-4 rounded-md text-center border border-primary">
+          <h5 class="text-primary mb-2">Columna 2</h5><p class="text-sm mb-0">Diseño responsivo</p>
+        </div>
+        <div class="bg-primary-light p-4 rounded-md text-center border border-primary">
+          <h5 class="text-primary mb-2">Columna 3</h5><p class="text-sm mb-0">Mobile first</p>
+        </div>
+      </div>
+
+      <h3>Grid — 4 columnas</h3>
+      <input type="checkbox" id="sn-grid-4" class="snippet-toggle">
+      <label for="sn-grid-4" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;div class="grid grid-cols-2 md:grid-cols-4 gap-3"&gt;
+  &lt;div class="bg-gray-100 p-3 rounded-md text-center text-sm font-medium"&gt;1&lt;/div&gt;
+  ...
+&lt;/div&gt;</div></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div class="bg-gray-100 p-3 rounded-md text-center text-sm font-medium">1</div>
+        <div class="bg-gray-100 p-3 rounded-md text-center text-sm font-medium">2</div>
+        <div class="bg-gray-100 p-3 rounded-md text-center text-sm font-medium">3</div>
+        <div class="bg-gray-100 p-3 rounded-md text-center text-sm font-medium">4</div>
+      </div>
+    </section>
+
+    <!-- Tarjetas -->
+    <section class="bg-white p-6 rounded-lg mb-6">
+      <h2>Tarjetas de contenido</h2>
+      <input type="checkbox" id="sn-cards" class="snippet-toggle">
+      <label for="sn-cards" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;article class="border rounded-lg p-4"&gt;
+  &lt;h4 class="text-primary"&gt;Título&lt;/h4&gt;
+  &lt;p class="text-sm text-gray-700 mb-4"&gt;Descripción del elemento.&lt;/p&gt;
+  &lt;button type="button" class="w-full"&gt;Acción&lt;/button&gt;
+&lt;/article&gt;</div></div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <article class="border rounded-lg p-4">
+          <h4 class="text-primary">Ligero y rápido</h4>
+          <p class="text-sm text-gray-700 mb-4">Solo 10KB minificado. Carga instantánea sin comprometer funcionalidad.</p>
+          <button type="button" class="w-full">Explorar</button>
+        </article>
+        <article class="border rounded-lg p-4">
+          <h4 class="text-primary">Responsive nativo</h4>
+          <p class="text-sm text-gray-700 mb-4">Sistema de grid y flexbox con breakpoints sm y md incluidos.</p>
+          <button type="button" class="w-full">Explorar</button>
+        </article>
+        <article class="border rounded-lg p-4">
+          <h4 class="text-primary">Accesible</h4>
+          <p class="text-sm text-gray-700 mb-4">Soporta lectores de pantalla y cumple con estándares WCAG.</p>
+          <button type="button" class="w-full">Explorar</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- Accesibilidad -->
+    <section id="accessibility" class="bg-white p-6 rounded-lg mb-6">
+      <h2>Accesibilidad</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3>Screen Reader Only</h3>
+          <input type="checkbox" id="sn-sr-only" class="snippet-toggle">
+          <label for="sn-sr-only" class="snippet-label">Ver HTML</label>
+          <div class="snippet-code"><div class="code-block">&lt;span class="sr-only"&gt;Solo lectores de pantalla&lt;/span&gt;
+&lt;span&gt;Contenido visible normal&lt;/span&gt;</div></div>
+          <p class="mb-4">Contenido visible solo para lectores de pantalla:</p>
+          <div class="bg-gray-50 p-4 rounded-md border">
+            <span class="sr-only">Este texto solo es visible para lectores de pantalla</span>
+            <span>Contenido visible normal</span>
+          </div>
+          <p class="text-sm text-gray-500 mt-3 mb-0">Usa <code>.sr-only</code> para ocultar visualmente pero mantener accesible</p>
+        </div>
+        <div>
+          <h3>Focus visible</h3>
+          <p class="mb-4">Todos los elementos interactivos tienen indicadores de foco:</p>
+          <div class="flex flex-col gap-3">
+            <button type="button">Presiona Tab para ver el foco</button>
+            <input type="text" placeholder="Focus en inputs">
+            <a href="#accessibility" class="inline-block">Enlace con outline</a>
+          </div>
+          <p class="text-sm text-gray-500 mt-3 mb-0">Los outlines mejoran la navegación por teclado</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Listas -->
+    <section class="bg-white p-6 rounded-lg mb-6">
+      <h2>Listas</h2>
+      <input type="checkbox" id="sn-lists" class="snippet-toggle">
+      <label for="sn-lists" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;ul&gt;
+  &lt;li&gt;Variables CSS nativas&lt;/li&gt;
+  &lt;li&gt;Componentes semánticos HTML5&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;Descarga el archivo CSS&lt;/li&gt;
+  &lt;li&gt;Vincula en tu HTML&lt;/li&gt;
+&lt;/ol&gt;</div></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3>Lista desordenada</h3>
+          <ul>
+            <li>Variables CSS nativas</li>
+            <li>Componentes semánticos HTML5</li>
+            <li>Reset CSS moderno incluido</li>
+            <li>Tipografía escalable y legible</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Lista ordenada</h3>
+          <ol>
+            <li>Descarga el archivo CSS</li>
+            <li>Vincúlalo en tu HTML</li>
+            <li>Usa las clases utilitarias</li>
+            <li>Personaliza las variables</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Espaciado -->
+    <section class="bg-white p-6 rounded-lg">
+      <h2>Sistema de espaciado</h2>
+      <input type="checkbox" id="sn-spacing" class="snippet-toggle">
+      <label for="sn-spacing" class="snippet-label">Ver HTML</label>
+      <div class="snippet-code"><div class="code-block">&lt;div class="bg-primary-light border border-primary p-1 rounded-md"&gt;p-1: 0.25rem&lt;/div&gt;
+&lt;div class="bg-primary-light border border-primary p-2 rounded-md"&gt;p-2: 0.5rem&lt;/div&gt;
+&lt;div class="bg-primary-light border border-primary p-4 rounded-md"&gt;p-4: 1rem&lt;/div&gt;</div></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3>Padding</h3>
+          <div class="flex flex-col gap-2">
+            <div class="bg-primary-light border border-primary p-1 rounded-md text-sm">p-1: 0.25rem</div>
+            <div class="bg-primary-light border border-primary p-2 rounded-md text-sm">p-2: 0.5rem</div>
+            <div class="bg-primary-light border border-primary p-3 rounded-md text-sm">p-3: 0.75rem</div>
+            <div class="bg-primary-light border border-primary p-4 rounded-md text-sm">p-4: 1rem</div>
+          </div>
+        </div>
+        <div>
+          <h3>Margin</h3>
+          <div class="bg-gray-50 p-4 rounded-md border">
+            <div class="bg-white border p-2 mb-2 text-sm text-center">mb-2</div>
+            <div class="bg-white border p-2 mb-3 text-sm text-center">mb-3</div>
+            <div class="bg-white border p-2 mb-4 text-sm text-center">mb-4</div>
+            <div class="bg-white border p-2 text-sm text-center">sin margin</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-primary text-white py-6 mt-8">
+    <div class="container text-center">
+      <p class="text-sm mb-2">M.CSS Framework — Minimalista, ligero y funcional</p>
+      <p class="text-xs mb-0" style="color:var(--color-primary-light)">Construido con CSS moderno y buenas prácticas de accesibilidad</p>
+    </div>
+  </footer>
+
+  <script src="./nav.js"></script>
+</body>
+</html>
