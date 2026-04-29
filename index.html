@@ -17,7 +17,7 @@
       <p class="text-lg mb-6" style="color:var(--color-primary-light)">Framework CSS minimalista. Todo lo esencial en solo 10KB.</p>
       <div class="flex flex-wrap gap-3 justify-center">
         <a href="doc.html"><button type="button">Documentación</button></a>
-        <a href="./m-2.min.css" download="m.css"><button type="button" class="bg-white text-primary border">Descargar M.CSS</button></a>
+        <button type="button" class="bg-white text-primary border" onclick="downloadCSS()">Descargar M.CSS</button>
       </div>
     </div>
   </header>
@@ -332,5 +332,18 @@
   </footer>
 
   <script src="./nav.js"></script>
+  <script>
+function downloadCSS() {
+  fetch('./m.min.css')
+    .then(r => r.blob())
+    .then(blob => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'm.min.css';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+}
+</script>
 </body>
 </html>
